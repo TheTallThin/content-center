@@ -5,8 +5,57 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/content_center
+    url: jdbc:mysql://localhost:3306/content_center?useUnicode=true&useJDBCCompliantTimezoneShift=true&serverTimezone=UTC&characterEncoding=utf8
     hikari:
       username: root
       password: root
       driver-class-name: com.mysql.cj.jdbc.Driver
+
+  cloud:
+    nacos:
+      discovery:
+        # 指定nacos server 地址
+        server-addr: localhost:8848
+        # 集群名称
+        cluster-name: BJ
+        # 元数据 版本控制 比如 v1版本只能调用的服务的v1版本
+        #metadata:
+          #version: v1
+          #target-version: v1
+        # namespace隔离，只能调用相同namespace,不能跨调
+        #namespace: 2dcb686f-ded3-4139-93df-68154be35c05
+  application:
+    # 服务名称尽量用-，不要用_，不要用特殊字符
+    name: content-center
+
+
+#解决Feign 2个一样名称的FeignClient
+  main:
+    allow-bean-definition-overriding: true
+
+# 负载均衡：随机选择一个  RandomRule
+#user-center:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+
+ribbon:
+  eager-load:
+    # 饥饿加载，多个用逗号隔开
+    clients: user-center
+
+logging:
+  level:
+    com.itmuch.contentcenter.feignclient.UserCenterFeignClient: debug
+#1 方法实现 feign 日志
+#com.itmuch.contentcenter.feignclient.UserCenterFeignClient: debug
+#2 配置属性实现 feign 日志
+feign:
+  client:
+    config:
+      # 想要调用的微服务的名称(user-center:局部配置，default:全局配置)
+      default:
+        # feign 日志的级别
+        loggerLevel: full
+
+
