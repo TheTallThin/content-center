@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface TestUserCenterFeignClient {
 
 
+
     /***
      *@SpringQueryMap  了解更多请求：https://www.imooc.com/article/289000
     [userDTO]
