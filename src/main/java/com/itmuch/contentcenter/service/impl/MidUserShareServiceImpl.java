@@ -1,6 +1,6 @@
 package com.itmuch.contentcenter.service.impl;
 
-import com.itmuch.contentcenter.pojo.MidUserShare;
+import com.itmuch.contentcenter.pojo.po.MidUserShare;
 import com.itmuch.contentcenter.mapper.MidUserShareMapper;
 import com.itmuch.contentcenter.service.IMidUserShareService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

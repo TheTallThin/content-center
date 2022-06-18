@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+
+    <!-- 日志输出格式 -->
+    <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符 -->
+    <!--    （这个是输出带彩色的格式，看起来酷炫一点）-->
+    <property name="console_pattern"
+              value="%highlight(%date{yyyy-MM-dd HH:mm:ss}) | %highlight(%-5level) | %highlight(%thread) | %highlight(%X{X-B3-TraceId}) | %highlight(%logger) | %msg%n"/>
+
+    <appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+
+            <layout class="org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout">
+                <!--%d{HH:mm:ss.SSS} [%thread] %-5level logName:%logger{36} - [trace=%X{X-B3-TraceId}, span=%X{X-B3-SpanId}] - Msg:%msg%n%n-->
+                <pattern>${console_pattern}</pattern>
+            </layout>
+        </encoder>
+    </appender>
+
+
+    <root level="info">
+        <appender-ref ref="consoleLog" />
+    </root>
+
+
+
+
+
+</configuration>

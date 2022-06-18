@@ -1,46 +1,45 @@
-package com.itmuch.contentcenter.pojo;
+package com.itmuch.contentcenter.pojo.po;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 
+ * 用户-分享中间表【描述用户购买的分享】
  * </p>
  *
  * @author hlc
  * @since 2022-03-06
  */
+@Builder
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value="Notice对象", description="")
-public class Notice implements Serializable {
+@TableName("mid_user_share")
+@ApiModel(value="MidUserShare对象", description="用户-分享中间表【描述用户购买的分享】")
+public class MidUserShare implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty(value = "id")
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    @ApiModelProperty(value = "内容")
-    private String content;
+    @ApiModelProperty(value = "share.id")
+    @TableField("share_id")
+    private Integer shareId;
 
-    @ApiModelProperty(value = "是否显示 0:否 1:是")
-    @TableField("show_flag")
-    private Boolean showFlag;
-
-    @ApiModelProperty(value = "创建时间")
-    @TableField("create_time")
-    private LocalDateTime createTime;
+    @ApiModelProperty(value = "user.id")
+    @TableField("user_id")
+    private Integer userId;
 
 
 }

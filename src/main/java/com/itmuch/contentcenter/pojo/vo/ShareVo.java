@@ -1,4 +1,4 @@
-package com.itmuch.contentcenter.pojo;
+package com.itmuch.contentcenter.pojo.vo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;

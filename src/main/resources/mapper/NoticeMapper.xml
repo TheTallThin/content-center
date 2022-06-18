@@ -3,7 +3,7 @@
 <mapper namespace="com.itmuch.contentcenter.mapper.NoticeMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.itmuch.contentcenter.pojo.Notice">
+    <resultMap id="BaseResultMap" type="com.itmuch.contentcenter.pojo.po.Notice">
         <id column="id" property="id" />
         <result column="content" property="content" />
         <result column="show_flag" property="showFlag" />

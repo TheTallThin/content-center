@@ -3,7 +3,7 @@
 <mapper namespace="com.itmuch.contentcenter.mapper.ShareMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.itmuch.contentcenter.pojo.Share">
+    <resultMap id="BaseResultMap" type="com.itmuch.contentcenter.pojo.po.Share">
         <id column="id" property="id" />
         <result column="user_id" property="userId" />
         <result column="title" property="title" />

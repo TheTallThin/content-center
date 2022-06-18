@@ -1,11 +1,9 @@
 package com.itmuch.contentcenter.service;
 
-import com.itmuch.contentcenter.mapper.ShareMapper;
-import com.itmuch.contentcenter.pojo.Share;
+import com.itmuch.contentcenter.pojo.po.Share;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.itmuch.contentcenter.pojo.ShareVo;
-
-import javax.annotation.Resource;
+import com.itmuch.contentcenter.pojo.vo.ShareAuditDTO;
+import com.itmuch.contentcenter.pojo.vo.ShareVo;
 
 /**
  * <p>
@@ -18,7 +16,10 @@ import javax.annotation.Resource;
 public interface IShareService extends IService<Share> {
 
 
-    ShareVo queryShareById(Integer id);
+    ShareVo queryShareById(Integer id
+            //,String token
+    );
 
 
+    Share audiById(Integer id, ShareAuditDTO auditDTO);
 }

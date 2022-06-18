@@ -1,6 +1,6 @@
 package com.itmuch.contentcenter.service.impl;
 
-import com.itmuch.contentcenter.pojo.Notice;
+import com.itmuch.contentcenter.pojo.po.Notice;
 import com.itmuch.contentcenter.mapper.NoticeMapper;
 import com.itmuch.contentcenter.service.INoticeService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

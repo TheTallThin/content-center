@@ -1,4 +1,4 @@
-package com.itmuch.contentcenter.pojo;
+package com.itmuch.contentcenter.pojo.po;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -14,7 +14,7 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 用户-分享中间表【描述用户购买的分享】
+ * RocketMQ事务日志表
  * </p>
  *
  * @author hlc
@@ -24,22 +24,22 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("mid_user_share")
-@ApiModel(value="MidUserShare对象", description="用户-分享中间表【描述用户购买的分享】")
-public class MidUserShare implements Serializable {
+@TableName("rocketmq_transaction_log")
+@ApiModel(value="RocketmqTransactionLog对象", description="RocketMQ事务日志表")
+public class RocketmqTransactionLog implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @ApiModelProperty(value = "id")
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    @ApiModelProperty(value = "share.id")
-    @TableField("share_id")
-    private Integer shareId;
+    @ApiModelProperty(value = "事务id")
+    @TableField("transaction_Id")
+    private String transactionId;
 
-    @ApiModelProperty(value = "user.id")
-    @TableField("user_id")
-    private Integer userId;
+    @ApiModelProperty(value = "日志")
+    private String log;
 
 
 }

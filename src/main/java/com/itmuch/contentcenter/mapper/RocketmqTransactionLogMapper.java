@@ -1,6 +1,6 @@
 package com.itmuch.contentcenter.mapper;
 
-import com.itmuch.contentcenter.pojo.RocketmqTransactionLog;
+import com.itmuch.contentcenter.pojo.po.RocketmqTransactionLog;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

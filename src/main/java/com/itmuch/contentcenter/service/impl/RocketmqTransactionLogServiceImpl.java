@@ -1,6 +1,6 @@
 package com.itmuch.contentcenter.service.impl;
 
-import com.itmuch.contentcenter.pojo.RocketmqTransactionLog;
+import com.itmuch.contentcenter.pojo.po.RocketmqTransactionLog;
 import com.itmuch.contentcenter.mapper.RocketmqTransactionLogMapper;
 import com.itmuch.contentcenter.service.IRocketmqTransactionLogService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

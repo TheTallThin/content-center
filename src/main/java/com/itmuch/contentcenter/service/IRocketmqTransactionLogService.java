@@ -1,6 +1,6 @@
 package com.itmuch.contentcenter.service;
 
-import com.itmuch.contentcenter.pojo.RocketmqTransactionLog;
+import com.itmuch.contentcenter.pojo.po.RocketmqTransactionLog;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

@@ -1,6 +1,6 @@
 package com.itmuch.contentcenter;
 
-import com.itmuch.contentcenter.pojo.MidUserShare;
+import com.itmuch.contentcenter.pojo.po.MidUserShare;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 

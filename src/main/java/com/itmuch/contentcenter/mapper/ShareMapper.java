@@ -1,6 +1,6 @@
 package com.itmuch.contentcenter.mapper;
 
-import com.itmuch.contentcenter.pojo.Share;
+import com.itmuch.contentcenter.pojo.po.Share;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
