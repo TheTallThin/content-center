@@ -1,0 +1,33 @@
+
+#------------------项目配置共享----------------
+#spring:
+#  cloud:
+#    nacos:
+#      config:
+#        # 这个server-addr是做配置管理的
+#        server-addr: 127.0.0.1:8848
+#        file-extension: yaml
+#  application:
+#    name: content-center
+#  profiles:
+#    active: prod
+
+
+
+#----------------应用的配置共享--------------------
+spring:
+  cloud:
+    nacos:
+      config:
+        # 共享配置的DataId,多个使用,分隔
+        # 越靠后,优先级越高; common2.yml > common1.yaml
+        # .yamL后缀不能少,只支持yaml/properties
+        shared-dataids: common1.yaml,common2.yaml
+        # 那些共享配置支持动态刷新，多个使用,分隔
+        refreshable-dataids: common1.yaml
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+  application:
+    name: content-center
+  profiles:
+    active: prod
